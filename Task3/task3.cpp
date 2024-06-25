@@ -6,10 +6,10 @@
 using namespace std;
 struct tasks
 {
-    string task;
-    string c;
+    string task;// to store task
+    string c;// to store status of task i.e., completed/pending
 };
-void add_task(vector<tasks> &task_list)
+void add_task(vector<tasks> &task_list) //adding task to vector task_list
 {
     tasks t;
     cout << "enter the task: ";
@@ -18,7 +18,7 @@ void add_task(vector<tasks> &task_list)
     t.c = "Pending";
     task_list.push_back(t);
 }
-void disp_task(vector<tasks> &task_list)
+void disp_task(vector<tasks> &task_list) // displaying all the task eith its status present in the task_list
 {
     int s = task_list.size();
     cout << "   Tasks\t\t\tC/N" << endl;
@@ -33,7 +33,7 @@ void disp_task(vector<tasks> &task_list)
     cout << endl
          << endl;
 }
-void del_task(vector<tasks> &task_list)
+void del_task(vector<tasks> &task_list) // deleteing the tasks from task_list
 {
     disp_task(task_list);
     int n;
@@ -49,7 +49,7 @@ void del_task(vector<tasks> &task_list)
     else
         cout << "invalid task number" << endl;
 }
-void mark_done(vector<tasks> &task_list)
+void mark_done(vector<tasks> &task_list)//marking completed the tasks which are done.
 {
     disp_task(task_list);
     cout << "Enter the task no. you want to be marked as done.: ";
@@ -65,7 +65,7 @@ void mark_done(vector<tasks> &task_list)
     else
         cout << "task marked done." << endl;
 }
-void edit_task(vector<tasks> &task_list)
+void edit_task(vector<tasks> &task_list) //editing the tasks present in task_list.
 {
     disp_task(task_list);
     cout << "Enter the task no. you want to edit.: ";
@@ -81,7 +81,7 @@ void edit_task(vector<tasks> &task_list)
         disp_task(task_list);
     }
 }
-int main()
+int main() //main function to check and use all the function designed above.
 {
     vector<tasks> task_list;
     int choice;
